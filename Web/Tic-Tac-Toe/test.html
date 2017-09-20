@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div>
+    	<table id="clickMe">
+    		<tr>
+    			<td><button v-on:click="flag1=!flag1"><img v-bind:src='picture1'></button></td>
+    			<td><button v-on:click="flag2=!flag2"><img v-bind:src='picture2'></button></td>
+    			<td><button v-on:click="flag3=!flag3"><img v-bind:src='picture3'></button></td>
+    		</tr>
+    		<tr>
+    			<td><button v-on:click="flag4=!flag4"><img v-bind:src='picture4'></button></td>
+    			<td><button v-on:click="flag5=!flag5"><img v-bind:src='picture5'></button></td>
+    			<td><button v-on:click="flag6=!flag6"><img v-bind:src='picture6'></button></td>
+    		</tr>
+    		<tr>
+    			<td><button v-on:click="flag7=!flag7"><img v-bind:src='picture7'></button></td>
+    			<td><button v-on:click="flag8=!flag8"><img v-bind:src='picture8'></button></td>
+    			<td><button v-on:click="flag9=!flag9"><img v-bind:src='picture9'></button></td>
+    		</tr>
+    	</table>
+    </div>
+    <script type="text/javascript">
+    	var vm = new Vue ({
+    		el: '#clickMe',
+    		data: {
+    			picture1: 'O.png',
+    			picture2: 'O.png',
+    			picture3: 'O.png',
+    			picture4: 'O.png',
+    			picture5: 'O.png',
+    			picture6: 'O.png',
+    			picture7: 'O.png',
+    			picture8: 'O.png',
+    			picture9: 'O.png',
+    			flag1: true,
+    			flag2: true,
+    			flag3: true,
+    			flag4: true,
+    			flag5: true,
+    			flag6: true,
+    			flag7: true,
+    			flag8: true,
+    			flag9: true,
+    		},
+    		watch: {
+    			flag1: function () {
+    				this.picture1 = 'X.png'
+    			},
+    			flag2: function () {
+    				this.picture2 = 'X.png'
+    			},
+    			flag3: function () {
+    				this.picture3 = 'X.png'
+    			},
+    			flag4: function () {
+    				this.picture4 = 'X.png'
+    			},
+    			flag5: function () {
+    				this.picture5 = 'X.png'
+    			},
+    			flag6: function () {
+    				this.picture6 = 'X.png'
+    			},
+    			flag7: function () {
+    				this.picture7 = 'X.png'
+    			},
+    			flag8: function () {
+    				this.picture8 = 'X.png'
+    			},
+    			flag9: function () {
+    				this.picture9 = 'X.png'
+    			}
+    		},
+    		
+    	})
+    </script>
+</body>
+</html>

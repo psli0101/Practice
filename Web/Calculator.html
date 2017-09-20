@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/vue"></script>
+	<title>Calculator</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="start">
+		<form name="keyInput" action="#">
+			<input v-model="formula" name="ReadOut" type="Text">
+			<table>
+				<tr>
+					<td><input type="button" id="seven" value="7" v-on:click="NumPressed(7)"></td>
+					<td><input type="button" id="eight" value="8" onclick="NumPressed(8)"></td>
+					<td><input type="button" id="nine" value="9" onclick="NumPressed(9)"></td>
+					<td><input type="button" id="divide" value="÷"></td>
+				</tr>
+				<tr>
+					<td><input type="button" id="four" value="4" onclick="NumPressed(4)"></td>
+					<td><input type="button" id="five" value="5" onclick="NumPressed(5)"></td>
+					<td><input type="button" id="six" value="6" onclick="NumPressed(6)"></td>
+					<td><input type="button" id="times" value="×"></td>
+				</tr>
+				<tr>
+					<td><input type="button" id="one" value="1" onclick="NumPressed(1)"></td>
+					<td><input type="button" id="two" value="2" onclick="NumPressed(2)"></td>
+					<td><input type="button" id="three" value="3" onclick="NumPressed(3)"></td>
+					<td><input type="button" id="minus" value="-"></td>
+				</tr>
+				<tr>
+					<td><input type="button" id="zero" value="0" onclick="NumPressed(0)"></td>
+					<td><input type="button" id="point" value="."></td>
+					<td><input type="button" id="equal" value="="></td>
+					<td><input type="button" id="plus" value="+"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<script type="text/javascript">
+		var KeyIn = document.keyInput;
+		var Flag = false;
+		function NumPressed (Num) {  
+			if (Flag) {  
+				FKeyPad.ReadOut.value  = Num;  
+				Flag = false;  
+			} else {  
+				if (FKeyPad.ReadOut.value == "0")  
+					FKeyPad.ReadOut.value = Num;  
+				else  
+					FKeyPad.ReadOut.value += Num;  
+		    }
+		}  
+		var vm = new Vue({
+			el: '#start',
+			data: {
+				formula: '0',
+			},
+			watch: {
+				formula: function (input) {
+					this.getAnswer();
+				}
+			},
+			methods: {
+				getFormula: function () {
+				},
+				getAnswer: function () {
+					if (this.formula.indexOf('=') === -1) {
+						this.formula = 'OK'
+						return
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>
