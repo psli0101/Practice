@@ -11,5 +11,7 @@ txt_name = soup.find('h2', 'post-title').get_text()
 
 # 寫入TXT
 file = open( './'+txt_name+'.txt', 'w', encoding='UTF-8')
-file.write(soup.find('p').get_text())
+for str in soup.find_all('p'):
+    file.write(str.get_text())
+    file.write("\n\n")
 file.close()
