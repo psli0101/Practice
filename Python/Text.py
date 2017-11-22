@@ -28,7 +28,7 @@ for i in range(len(result_link)):
     #txt_name = soup.find('h2', 'post-title').get_text()
 
     # 寫入TXT
-    file = open( './WtNV/'+result_title[i]+'.txt', 'w', encoding='UTF-8')
+    file = open( './******/'+result_title[i]+'.txt', 'w', encoding='UTF-8')
     file.write('TITLE：'+result_title[i]+'\n\n\n')
     for str in soup.find_all('p'):
         if str.get_text() == "Audio available at: nightvale.libsyn.com" :

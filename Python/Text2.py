@@ -3,7 +3,7 @@ import requests
 import re
 
 # 讀取網頁
-res = requests.get('https://cecilspeaks.tumblr.com/post/56680281610/episode-1-pilot')
+res = requests.get('******')
 soup = BeautifulSoup(res.text, "html.parser")
 
 # 抓取資料
@@ -13,7 +13,7 @@ catch = soup.find('div', 'side-box ruled-top').find_all(href=re.compile("/ep"))
 file = open( './Links.txt', 'w', encoding='UTF-8')
 for i in range(len(catch)):
     link = catch[i].get('href')
-    file.write('https://cecilspeaks.tumblr.com'+link)
+    file.write('******'+link)
     file.write("\n")
 file.close()
 
