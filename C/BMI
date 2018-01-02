@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main () {
+    
+    /* 變數 */
+    int weight;
+    float height, bmi;
+
+    /* 輸入 */
+    print("Weight: ");
+    scanf("%d", &weight);
+    print("Height: ");
+    scanf("%f", &height);
+
+    bmi = weight / (height*height);
+
+    printf("%f", bmi);
+}
